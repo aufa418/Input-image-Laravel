@@ -14,9 +14,19 @@
         <h2 class="text-center mt-4">Fitur input gambar</h2>
         <div class="mt-5">
             <form action="/" method="post" enctype="multipart/form-data">
+                @csrf
                 <label for="image" class="form-label">Input gambar</label>
-                <input class="form-control" type="file" id="image" name="image">
+                <input class="form-control" type="file" id="image" name="image" required>
+
+                <button type="submit" class="btn btn-primary mt-4">Kirim</button>
             </form>
+        </div>
+        <hr>
+        <div class="mt-3">
+            @foreach ($post as $post)
+                <img class="ma-3" src="http://127.0.0.1:8000/storage/{{ $post->image }}"
+                    style="max-width: 300px; overflow:hidden;">
+            @endforeach
         </div>
     </div>
 

@@ -14,8 +14,6 @@ use App\Http\Controllers\InputController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [InputController::class, 'index']);
 
 Route::post('/', [InputController::class, 'store']);
