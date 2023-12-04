@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\InputImageController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\InputController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +14,8 @@ use App\Http\Controllers\InputController;
 |
 */
 
-Route::get('/', [InputController::class, 'index']);
+// Route::get('/', [InputController::class, 'index']);
+// Route::post('/', [InputController::class, 'store']);
 
-Route::post('/', [InputController::class, 'store']);
+Route::get('/', [InputImageController::class, 'index']);
+Route::resource('input-images', InputImageController::class);
